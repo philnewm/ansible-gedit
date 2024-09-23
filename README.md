@@ -1,6 +1,6 @@
 ## Role Name
 
-[![ci-testing](https://github.com/philnewm/ansible-role-template/actions/workflows/molecule-ci.yml/badge.svg)](https://github.com/philnewm/ansible-role-template/actions/workflows/molecule-ci.yml)
+[![ci-testing](https://github.com/philnewm/ansible-gedit/actions/workflows/molecule-ci.yml/badge.svg)](https://github.com/philnewm/ansible-gedit/actions/workflows/molecule-ci.yml)
 
 Role description
 
@@ -11,7 +11,7 @@ This role includes a full vagrant based molecule testing setup at `extensions/mo
 # Structure
 
 ```
-📦 ansible-role-template
+📦 ansible-gedit
  ┣ 📂 defaults
  ┃ ┗ 📜 main.yml
   ┣ 📂 files
@@ -67,11 +67,11 @@ Add an example playbook
 ---
 
 tasks:
-  - name: Include ansible-role-template present
+  - name: Include ansible-gedit present
     ansible.builtin.include_role:
-      name: ansible-role-template
+      name: ansible-gedit
     vars:
-      ansible_role_template_state: present
+      gedit_state: present
 
 ...
 ```

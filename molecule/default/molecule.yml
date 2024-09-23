@@ -13,18 +13,47 @@ lint: |
   ansible-lint
 platforms:
   - name: Alma9
-    box: almalinux/9
-    memory: 2048
+    box: philnewm/alma9.4-gnome
+    memory: 4096
     cpus: 2
     interfaces:
       - auto_config: true
         network_name: private_network
         type: "static"
-        ip: "192.168.56.20"
+        ip: "192.168.56.10"
     provider_raw_config_args:
       - "customize ['modifyvm', :id, '--uartmode1', 'disconnected']"
+      - "customize ['modifyvm', :id, '--graphicscontroller', 'vmsvga']"
+      - "customize ['modifyvm', :id, '--vram', '256']"
+      - "customize ['modifyvm', :id, '--accelerate-3d', 'off']"
+      - "customize ['modifyvm', :id, '--accelerate-2d-video', 'on']"
+      - "customize ['modifyvm', :id, '--defaultfrontend', 'gui']"
+      - "customize ['modifyvm', :id, '--clipboard-mode', 'bidirectional']"
+      - "customize ['modifyvm', :id, '--draganddrop', 'bidirectional']"
+      - "customize ['storagectl', :id, '--name', 'SATA Controller', '--hostiocache', 'on']"
     groups:
       - client
+  # - name: Ubuntu2204
+  #   box: philnewm/ubuntu2204-gnome
+  #   memory: 4096
+  #   cpus: 2
+  #   interfaces:
+  #     - auto_config: true
+  #       network_name: private_network
+  #       type: "static"
+  #       ip: "192.168.56.20"
+  #   provider_raw_config_args:
+  #     - "customize ['modifyvm', :id, '--uartmode1', 'disconnected']"
+  #     - "customize ['modifyvm', :id, '--graphicscontroller', 'vmsvga']"
+  #     - "customize ['modifyvm', :id, '--vram', '256']"
+  #     - "customize ['modifyvm', :id, '--accelerate-3d', 'off']"
+  #     - "customize ['modifyvm', :id, '--accelerate-2d-video', 'on']"
+  #     - "customize ['modifyvm', :id, '--defaultfrontend', 'gui']"
+  #     - "customize ['modifyvm', :id, '--clipboard-mode', 'bidirectional']"
+  #     - "customize ['modifyvm', :id, '--draganddrop', 'bidirectional']"
+  #     - "customize ['storagectl', :id, '--name', 'SATA Controller', '--hostiocache', 'on']"
+  #   groups:
+  #     - client
 provisioner:
   name: ansible
   env:

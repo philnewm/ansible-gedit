@@ -1,6 +1,6 @@
 ---
 
-# Tasks to remove ansible-role-template
+# Tasks to remove ansible-gedit
 
 
 - name: Remove unused dependencies
