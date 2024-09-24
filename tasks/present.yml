@@ -1,9 +1,5 @@
 ---
 
-# tasks to install ansible-gedit
-# INFO larger roles should only use **include_tasks** here
-
-
 # INFO This task may be osbolete for your use-case
 - name: Gather package facts
   ansible.builtin.package_facts:
@@ -15,34 +11,15 @@
     name: "{{ editor_package[ansible_os_family] }}"
     state: present
 
+- name: Add theme
+  when: custom_theme
+  ansible.builtin.include_tasks:
+    file: theme.yml
+
 - name: Configure gedit settings
   community.general.dconf:
     key: "{{ item.key }}"
     value: "{{ item.value | string }}"
-  loop: "{{ text_editor_settings | dict2items }}"
-
-- name: Show path
-  ansible.builtin.debug:
-    var: gedit_user_theme_path
-
-- name: Create gedit user theme directory
-  ansible.builtin.file:
-    path: "{{ gedit_user_theme_path }}"
-    state: directory
-    mode: "0755"
-
-- name: Copy gedit theme
-  ansible.builtin.copy:
-    src: "womvamp.xml"
-    dest: "{{ gedit_user_theme_path }}/womvamp.xml"
-    owner: "{{ ansible_env.USER }}"
-    group: "{{ ansible_effective_group_id }}"
-    mode: "0755"
-
-- name: Configure custom theme
-  community.general.dconf:
-    key: "{{ item.key }}"
-    value: "{{ item.value | string }}"
-  loop: "{{ theme_settings | dict2items }}"
+  loop: "{{ gedit_settings | dict2items }}"
 
 ...

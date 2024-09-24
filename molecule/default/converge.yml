@@ -10,5 +10,6 @@
     - role: ansible-gedit
       tasks_from: main
       gedit_state: present
+      custom_theme: true
 
 ...

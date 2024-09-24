@@ -6,12 +6,19 @@ editor_package:
   "RedHat": "gedit"
   "Debian": "gedit"
 
-text_editor_settings:
+custom_theme: true
+gedit_user_theme_path: "{{ ansible_env.HOME }}/.local/share/gtksourceview-4/styles/"
+
+default_theme_name: "oblivion"
+custom_theme_name: "womvamp"
+theme_name: "{{ default_theme_name if not custom_theme else custom_theme_name }}"
+
+gedit_settings:
   "/org/gnome/gedit/preferences/editor/highlight-current-line": "true"
   "/org/gnome/gedit/preferences/editor/right-margin-position": "uint32 80"
   "/org/gnome/gedit/preferences/editor/display-line-numbers": "true"
   "/org/gnome/gedit/preferences/editor/display-overview-map": "true"
-  "/org/gnome/gedit/preferences/editor/scheme": "'oblivion'"
+  "/org/gnome/gedit/preferences/editor/scheme": "'{{ theme_name }}'"
   "/org/gnome/gedit/preferences/editor/tabs-size": "uint32 4"
   "/org/gnome/gedit/preferences/editor/use-default-font": "false"
   "/org/gnome/gedit/preferences/editor/ensure-trailing-newline": "true"
@@ -20,11 +27,5 @@ text_editor_settings:
   "/org/gnome/gedit/preferences/ui/show-tabs-mode": "'auto'"
   "/org/gnome/gedit/plugins/active-plugins": "['spell', 'sort', 'quickhighlight', 'pythonconsole', 'modelines', 'filebrowser', 'docinfo']"
   "/org/gnome/gedit/plugins/spell/highlight-misspelled": "true"
-
-
-gedit_user_theme_path: "{{ ansible_env.HOME }}/.local/share/gtksourceview-4/styles/"
-
-theme_settings:
-  "/org/gnome/gedit/preferences/editor/scheme": "'womvamp'"
 
 ...

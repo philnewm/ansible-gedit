@@ -12,4 +12,31 @@
     - name: Gather package facts
       ansible.builtin.package_facts:
 
+    - name: Test installed package
+      ansible.builtin.assert:
+        that:
+          - editor_package[ansible_os_family] in ansible_facts.packages
+        fail_msg: "Package '{{ editor_package[ansible_os_family] }}' is not installed"
+        quiet: true
+
+    - name: Get gedit settings
+      loop: "{{ gedit_settings | dict2items }}"
+      community.general.dconf:
+        key: "{{ item.key }}"
+        state: read
+      register: dconf_list
+
+    - name: Test gnome settings
+      loop: "{{ dconf_list.results }}"
+      loop_control:
+        loop_var: entry
+        label: "{{ entry.item.key }}"
+      ansible.builtin.assert:
+        that:
+          - entry.value == gedit_settings[entry.item.key]
+        fail_msg: |
+          "Expected value '{{ gedit_settings[entry.item.key] }}'
+          but got '{{ entry.value }}' instead for key '{{ entry.item.key }}'."
+        quiet: true
+
 ...

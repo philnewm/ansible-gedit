@@ -1,0 +1,17 @@
+---
+
+- name: Create gedit user theme directory
+  ansible.builtin.file:
+    path: "{{ gedit_user_theme_path }}"
+    state: directory
+    mode: "0755"
+
+- name: Copy gedit theme
+  ansible.builtin.copy:
+    src: "womvamp.xml"
+    dest: "{{ gedit_user_theme_path }}/womvamp.xml"
+    owner: "{{ ansible_env.USER }}"
+    group: "{{ ansible_effective_group_id }}"
+    mode: "0755"
+
+...
