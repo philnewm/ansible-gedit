@@ -2,6 +2,17 @@
 
 # Tasks to remove ansible-gedit
 
+- name: Remove gedit
+  become: true
+  when: editor_package[ansible_os_family] in ansible_facts.packages
+  ansible.builtin.package:
+    name: "{{ editor_package[ansible_os_family] }}"
+    state: absent
+
+- name: Create gedit user theme directory
+  ansible.builtin.file:
+    path: "{{ gedit_user_theme_path }}"
+    state: absent
 
 - name: Remove unused dependencies
   become: true

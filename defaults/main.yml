@@ -10,7 +10,7 @@ custom_theme: true
 gedit_user_theme_path: "{{ ansible_env.HOME }}/.local/share/gtksourceview-4/styles/"
 
 default_theme_name: "oblivion"
-custom_theme_name: "womvamp"
+custom_theme_name: "lavanda"
 theme_name: "{{ default_theme_name if not custom_theme else custom_theme_name }}"
 
 gedit_settings:
