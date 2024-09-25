@@ -63,6 +63,11 @@ jobs:
         export USER=$(whoami)
         VBoxManage --version
 
+    - name: Load VirtualBox kernel modules
+      run: |
+        sudo modprobe vboxdrv
+        sudo modprobe vboxnetflt
+
     - name: install vagrant
       run: |
         # Get vagrant gpg key
