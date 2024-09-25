@@ -75,4 +75,4 @@ jobs:
 
     - name: Run molecule test
       run: |
-        molecule test 
+        molecule test --provider virtualbox
