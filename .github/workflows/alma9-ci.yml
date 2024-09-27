@@ -25,7 +25,7 @@ permissions:
 
 jobs:
   alma9:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-20.04
     strategy:
       max-parallel: 5
     steps:
@@ -44,29 +44,19 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
- 
+
     # INFO rolled back to version 7.0.14 cause latest(7.0.16/7.0.18) is not getting detected by vagrant
     - name: Install VirtualBox 7.0.14
       run: |
-        export LOGNAME=$(whoami)
-        export USER=$(whoami)
         wget -O- https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --dearmor --yes --output /usr/share/keyrings/oracle-virtualbox-2016.gpg
         echo "deb [arch=amd64 signed-by=/usr/share/keyrings/oracle-virtualbox-2016.gpg] http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
         sudo apt-get update
-        wget https://download.virtualbox.org/virtualbox/7.0.18/virtualbox-7.0_7.0.18-162988~Ubuntu~$(lsb_release -cs)_amd64.deb
+        wget https://download.virtualbox.org/virtualbox/7.0.14/virtualbox-7.0_7.0.14-161095~Ubuntu~$(lsb_release -cs)_amd64.deb
         sudo apt-get install -y linux-headers-$(uname -r) dkms
-        sudo apt-get install ./virtualbox-7.0_7.0.18-162988~Ubuntu~$(lsb_release -cs)_amd64.deb
+        sudo apt-get install ./virtualbox-7.0_7.0.14-161095~Ubuntu~$(lsb_release -cs)_amd64.deb
 
     - name: Verify VirtualBox installation
-      run: |
-        export LOGNAME=$(whoami)
-        export USER=$(whoami)
-        VBoxManage --version
-
-    - name: Load VirtualBox kernel modules
-      run: |
-        sudo modprobe vboxdrv
-        sudo modprobe vboxnetflt
+      run: VBoxManage --version
 
     - name: install vagrant
       run: |

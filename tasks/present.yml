@@ -4,6 +4,10 @@
 - name: Gather package facts
   ansible.builtin.package_facts:
 
+- name: Include dependencies
+  ansible.builtin.include_tasks:
+    file: dependencies.yml
+
 - name: Install gedit
   become: true
   when: editor_package[ansible_os_family] not in ansible_facts.packages
