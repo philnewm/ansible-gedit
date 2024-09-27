@@ -13,6 +13,7 @@ lint: |
   ansible-lint
 platforms:
   - name: Alma9
+    version: 0.1.0
     box: philnewm/alma9.4-gnome
     memory: 4096
     cpus: 2
@@ -35,6 +36,7 @@ platforms:
       - client
   - name: Debian12
     box: philnewm/debian12-gnome  # philnewm/ubuntu2204-gnome
+    version: 0.1.0
     memory: 4096
     cpus: 2
     interfaces:
