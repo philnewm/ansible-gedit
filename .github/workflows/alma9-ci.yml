@@ -75,4 +75,4 @@ jobs:
     - name: Show error log
       if: always()
       run: |
-        cat /home/runner/.cache/molecule/ansible-gedit/default/vagrant.err
+        cat /home/runner/.cache/molecule/ansible-gedit/default/Vagrantfile
