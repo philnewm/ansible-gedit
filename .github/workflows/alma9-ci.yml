@@ -70,6 +70,7 @@ jobs:
 
     - name: Run molecule test
       run: |
+        export VAGRANT_LOG=debug
         molecule test
 
     - name: Show error log
