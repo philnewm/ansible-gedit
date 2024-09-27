@@ -12,7 +12,8 @@ lint: |
   yamllint
   ansible-lint
 platforms:
-  - name: almalinux/9
+  - name: Alma9
+    box: almalinux/9
     # box_url: "https://vagrantcloud.com/philnewm/boxes/alma9.4-gnome/versions/0.1.0/providers/virtualbox/amd64/vagrant.box"
     box_version: "9.4.20240509"
     memory: 4096
