@@ -1,23 +1,19 @@
 ## Role Name
 
-[![ci-testing](https://github.com/philnewm/ansible-gedit/actions/workflows/molecule-ci.yml/badge.svg)](https://github.com/philnewm/ansible-gedit/actions/workflows/molecule-ci.yml)
+[![Alma9-CI](https://github.com/philnewm/ansible-gedit/actions/workflows/alma9-ci.yml/badge.svg)](https://github.com/philnewm/ansible-gedit/actions/workflows/alma9-ci.yml)  [![Debian12-CI](https://github.com/philnewm/ansible-gedit/actions/workflows/debian12-ci.yml/badge.svg)](https://github.com/philnewm/ansible-gedit/actions/workflows/debian12-ci.yml)
 
 Role description
-
-
 
 This role includes a full vagrant based molecule testing setup at `extensions/molecule/default`
 
 # Structure
 
-```
+```code
 📦 ansible-gedit
  ┣ 📂 defaults
  ┃ ┗ 📜 main.yml
-  ┣ 📂 files
- ┃ ┗ 📜 file_placeholder.yml
- ┣ 📂 handlers
- ┃ ┗ 📜 main.yml
+ ┣ 📂 files
+ ┃ ┗ 📜 lavanda.xml
  ┣ 📂 meta
  ┃ ┗ 📜 main.yml
  ┣ 📂 molecule
