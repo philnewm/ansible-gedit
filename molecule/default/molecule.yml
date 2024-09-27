@@ -51,7 +51,7 @@ platforms:
       - "customize ['modifyvm', :id, '--defaultfrontend', 'gui']"
       - "customize ['modifyvm', :id, '--clipboard-mode', 'bidirectional']"
       - "customize ['modifyvm', :id, '--draganddrop', 'bidirectional']"
-      #- "customize ['storagectl', :id, '--name', 'SATA Controller', '--hostiocache', 'on']"
+      - "customize ['storagectl', :id, '--name', 'SATA Controller', '--hostiocache', 'on']"
     groups:
       - client
 provisioner:
