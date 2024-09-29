@@ -4,13 +4,13 @@
   hosts: client
 
   tasks:
+    - name: Gather package facts
+      ansible.builtin.package_facts:
+
     - name: Initialize role library
       ansible.builtin.include_role:
         name: ansible-gedit
         tasks_from: init
-
-    - name: Gather package facts
-      ansible.builtin.package_facts:
 
     - name: Test installed package
       ansible.builtin.assert:
@@ -20,9 +20,9 @@
         quiet: true
 
     - name: Get gedit settings
-      loop: "{{ gedit_settings | dict2items }}"
+      loop: "{{ gedit_settings.keys() }}"
       community.general.dconf:
-        key: "{{ item.key }}"
+        key: "{{ item }}"
         state: read
       register: dconf_list
 
@@ -30,13 +30,13 @@
       loop: "{{ dconf_list.results }}"
       loop_control:
         loop_var: entry
-        label: "{{ entry.item.key }}"
+        label: "{{ entry.item }}"
       ansible.builtin.assert:
         that:
-          - entry.value == gedit_settings[entry.item.key]
+          - entry.value == gedit_settings[entry.item]
         fail_msg: |
-          "Expected value '{{ gedit_settings[entry.item.key] }}'
-          but got '{{ entry.value }}' instead for key '{{ entry.item.key }}'."
+          "Expected value '{{ gedit_settings[entry.item] }}'
+          but got '{{ entry.value }}' instead for key '{{ entry.item }}'."
         quiet: true
 
 ...

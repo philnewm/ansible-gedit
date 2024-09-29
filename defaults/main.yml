@@ -2,11 +2,6 @@
 
 # Variables for ansible-gedit
 
-dependencies:
-  "RedHat": 
-    - python3-psutil
-  "Debian": 
-    - python3-psutil
 
 editor_package:
   "RedHat": "gedit"

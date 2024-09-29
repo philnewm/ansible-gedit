@@ -4,7 +4,7 @@
 
 Role description
 
-This role includes a full vagrant based molecule testing setup at `extensions/molecule/default`
+This role includes a full vagrant based molecule testing setup at `molecule/default`
 
 # Structure
 
@@ -23,10 +23,9 @@ This role includes a full vagrant based molecule testing setup at `extensions/mo
  ┃ ┣ 📜 main.yml
  ┃ ┣ 📜 present.yml
  ┃ ┣ 📜 dependencies.yml
+ ┃ ┣ 📜 theme.yml
  ┃ ┣ 📜 absent.yml
  ┃ ┗ 📜 init.yml
- ┣ 📂 templates
- ┃ ┗ ⛩️ template.j2
  ┣ 📂 vars
  ┃ ┗ 📜 main.yml
  ┗ 🗒️ README.md

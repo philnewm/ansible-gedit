@@ -21,9 +21,9 @@
     file: theme.yml
 
 - name: Configure gedit settings
+  loop: "{{ gedit_settings | dict2items }}"
   community.general.dconf:
     key: "{{ item.key }}"
     value: "{{ item.value | string }}"
-  loop: "{{ gedit_settings | dict2items }}"
 
 ...

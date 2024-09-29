@@ -3,7 +3,7 @@
 # Runs all dependencies
 
 
-- name: install dependencies
+- name: Install dependencies
   become: true
   loop: "{{ dependencies[ansible_os_family] }}"
   when: item not in ansible_facts.packages

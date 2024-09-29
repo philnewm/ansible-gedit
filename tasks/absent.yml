@@ -9,7 +9,7 @@
     name: "{{ editor_package[ansible_os_family] }}"
     state: absent
 
-- name: Create gedit user theme directory
+- name: Remove gedit user theme directory
   ansible.builtin.file:
     path: "{{ gedit_user_theme_path }}"
     state: absent

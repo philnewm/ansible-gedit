@@ -3,7 +3,10 @@
 # vars file for ansible-gedit
 
 
-# remove this placeholder
-ansible_role_template: "Default role name still in use."
+dependencies:
+  "RedHat": 
+    - python3-psutil
+  "Debian": 
+    - python3-psutil
 
 ...
