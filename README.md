@@ -1,6 +1,6 @@
 ## Role Name
 
-[![Alma9-CI](https://github.com/philnewm/ansible-gedit/actions/workflows/alma9-ci.yml/badge.svg)](https://github.com/philnewm/ansible-gedit/actions/workflows/alma9-ci.yml)  [![Debian12-CI](https://github.com/philnewm/ansible-gedit/actions/workflows/debian12-ci.yml/badge.svg)](https://github.com/philnewm/ansible-gedit/actions/workflows/debian12-ci.yml)
+[![Alma9-CI](https://github.com/philnewm/ansible-gedit/actions/workflows/alma9-ci.yml/badge.svg)](https://github.com/philnewm/ansible-gedit/actions/workflows/alma9-ci.yml)  [![Debian12-CI](https://github.com/philnewm/ansible-gedit/actions/workflows/debian12-ci.yml/badge.svg)](https://github.com/philnewm/ansible-gedit/actions/workflows/debian12-ci.yml)  [![Ubuntu2204-CI](https://github.com/philnewm/ansible-gedit/actions/workflows/ubuntu2204-ci.yml/badge.svg)](https://github.com/philnewm/ansible-gedit/actions/workflows/ubuntu2204-ci.yml)
 
 Role description
 
