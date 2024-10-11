@@ -1,12 +1,10 @@
-## Role Name
+# Ansible gedit role
 
-[![Alma9-CI](https://github.com/philnewm/ansible-gedit/actions/workflows/alma9-ci.yml/badge.svg)](https://github.com/philnewm/ansible-gedit/actions/workflows/alma9-ci.yml)  [![Debian12-CI](https://github.com/philnewm/ansible-gedit/actions/workflows/debian12-ci.yml/badge.svg)](https://github.com/philnewm/ansible-gedit/actions/workflows/debian12-ci.yml)  [![Ubuntu2204-CI](https://github.com/philnewm/ansible-gedit/actions/workflows/ubuntu2204-ci.yml/badge.svg)](https://github.com/philnewm/ansible-gedit/actions/workflows/ubuntu2204-ci.yml)
-
-Role description
+[![Alma9-CI](https://github.com/philnewm/ansible-gedit/actions/workflows/alma9-ci.yml/badge.svg)](https://github.com/philnewm/ansible-gedit/actions/workflows/alma9-ci.yml)  [![Rocky9-CI](https://github.com/philnewm/ansible-gedit/actions/workflows/rocky9-ci.yml/badge.svg)](https://github.com/philnewm/ansible-gedit/actions/workflows/rocky9-ci.yml)  [![CentOSStream9-CI](https://github.com/philnewm/ansible-gedit/actions/workflows/centosstream9-ci.yml/badge.svg)](https://github.com/philnewm/ansible-gedit/actions/workflows/centosstream9-ci.yml)  [![Debian12-CI](https://github.com/philnewm/ansible-gedit/actions/workflows/debian12-ci.yml/badge.svg)](https://github.com/philnewm/ansible-gedit/actions/workflows/debian12-ci.yml)  [![Ubuntu2204-CI](https://github.com/philnewm/ansible-gedit/actions/workflows/ubuntu2204-ci.yml/badge.svg)](https://github.com/philnewm/ansible-gedit/actions/workflows/ubuntu2204-ci.yml)
 
 This role includes a full vagrant based molecule testing setup at `molecule/default`
 
-# Structure
+## Structure
 
 ```code
 📦 ansible-gedit
@@ -33,11 +31,11 @@ This role includes a full vagrant based molecule testing setup at `molecule/defa
 
 ```
 
-Describe and explain role structure. 
+Describe and explain role structure.
 
 ## Requirements
 
-Ellaborate external dependencies and how to use them.
+Elaborate external dependencies and how to use them.
 
 ## Role Variables
 
@@ -50,7 +48,6 @@ Ellaborate external dependencies and how to use them.
   * sec_var
   * third_var
 
-
 ## Dependencies
 
 List role ansible-galaxy dependencies - if any.
@@ -58,6 +55,7 @@ List role ansible-galaxy dependencies - if any.
 ## Example Playbook
 
 Add an example playbook
+
 ```yaml
 ---
 
@@ -70,10 +68,7 @@ tasks:
 
 ...
 ```
+
 ## License
 
 Add license - if any.
-
-## Changes to role template
-
-* Add github action that flags empty directories on release creation
