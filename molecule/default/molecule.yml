@@ -1,9 +1,9 @@
 ---
+
 dependency:
   name: galaxy
 driver:
   name: vagrant
-  parallel: true
   provider:
     name: virtualbox
     type: virtualbox
@@ -14,9 +14,11 @@ lint: |
 platforms:
   - name: Alma9
     box: philnewm/alma9.4-gnome
-    box_version: "0.1.1"
+    box_version: "0.1.11"
     memory: 4096
     cpus: 2
+    provider_options:
+      gui: true
     interfaces:
       - auto_config: true
         network_name: private_network
@@ -36,9 +38,11 @@ platforms:
       - client
   - name: Ubuntu2204
     box: philnewm/ubuntu2204-gnome
-    version: "0.1.11"
+    version: "0.1.12"
     memory: 4096
     cpus: 2
+    provider_options:
+      gui: true
     interfaces:
       - auto_config: true
         network_name: private_network
@@ -59,7 +63,6 @@ platforms:
 provisioner:
   name: ansible
   env:
-    # ANSIBLE_VERBOSITY: 3
     ANSIBLE_DIFF_ALWAYS: false
   playbooks:
     create: ../default/create.yml
@@ -82,7 +85,6 @@ provisioner:
       stdout_callback: debug
       callbacks_enabled: ansible.posix.profile_tasks
     connection:
-      # WARNING disable "requiretty" in hosts sudoers file on case of errors
       pipelining: true
     env:
       ANSIBLE_FORCE_COLOR: "true"
@@ -100,3 +102,5 @@ scenario:
       - verify
       - cleanup
       - destroy
+
+...
