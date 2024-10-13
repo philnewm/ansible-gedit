@@ -33,4 +33,8 @@
       ansible.builtin.include_tasks:
         file: post_boot.yml
 
+    - name: Include vm_adjust playbook
+      ansible.builtin.include_tasks:
+        file: vm_adjust.yml
+
 ...

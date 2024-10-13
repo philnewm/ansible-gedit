@@ -7,11 +7,11 @@
     - name: Gather package facts
       ansible.builtin.package_facts:
 
-  tasks:
-    # TODO check if VM even exists
-  roles:
-    - role: ansible-gedit
-      gedit_state: absent
+  # tasks:
+  #   # TODO check if VM even exists
+  # roles:
+  #   - role: ansible-gedit
+  #     gedit_state: absent
 
 - name: Cleanup
   hosts: localhost

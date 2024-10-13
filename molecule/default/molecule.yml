@@ -54,7 +54,6 @@ platforms:
       - "customize ['modifyvm', :id, '--vram', '256']"
       - "customize ['modifyvm', :id, '--accelerate-3d', 'off']"
       - "customize ['modifyvm', :id, '--accelerate-2d-video', 'on']"
-      - "customize ['modifyvm', :id, '--defaultfrontend', 'gui']"
       - "customize ['modifyvm', :id, '--clipboard-mode', 'bidirectional']"
       - "customize ['modifyvm', :id, '--draganddrop', 'bidirectional']"
       - "customize ['storagectl', :id, '--name', 'SATA Controller', '--hostiocache', 'on']"
