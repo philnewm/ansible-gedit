@@ -3,8 +3,8 @@
 # tasks file for ansible-gedit
 
 
-- name: "Desired state is {{ gedit_state }}"
+- name: "Desired state is {{ state }}"
   ansible.builtin.include_tasks:
-    file: "{{ gedit_state }}.yml"
+    file: "{{ state }}.yml"
 
 ...

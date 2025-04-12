@@ -2,6 +2,7 @@
 
 # Variables for ansible-gedit
 
+state: present
 
 editor_package:
   "RedHat": "gedit"

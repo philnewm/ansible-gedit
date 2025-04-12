@@ -64,7 +64,7 @@ tasks:
     ansible.builtin.include_role:
       name: ansible-gedit
     vars:
-      gedit_state: present
+      state: present
 
 ...
 ```
